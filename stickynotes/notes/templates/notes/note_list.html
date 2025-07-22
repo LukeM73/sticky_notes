@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>My Sticky Notes</h1>
+<a href="{% url 'note_create' %}">+New Note</a> 
+
+{% for note in notes %}
+<div class="note">
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.content }}</p>
+</div>
+{% endfor %}
+{% endblock %}
